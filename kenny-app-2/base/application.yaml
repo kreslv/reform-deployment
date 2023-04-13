@@ -1,0 +1,37 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  annotations:
+    application.deploy.reform/tags: ""
+  creationTimestamp: null
+  name: kenny-app-2
+  namespace: vela-system
+spec:
+  components:
+  - name: kenny-app-2-web-web
+    properties:
+      addRevisionLabel: false
+      cpu: "0.4"
+      exposeType: ClusterIP
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      memory: 10Mi
+      ports:
+      - expose: true
+        port: 80
+        protocol: TCP
+    type: webservice
+  - name: kenny-app-2-api-api
+    properties:
+      addRevisionLabel: false
+      cpu: "0.5"
+      exposeType: ClusterIP
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      memory: 10Mi
+      ports:
+      - expose: true
+        port: 80
+        protocol: TCP
+    type: webservice
+status: {}
