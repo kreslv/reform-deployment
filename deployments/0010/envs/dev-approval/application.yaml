@@ -1,0 +1,48 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  annotations:
+    application.deploy.reform/cluster: local
+    application.deploy.reform/commitHash: 7358ec7e2b8027b3c37d26e3ec2b1ee67a29421a
+    application.deploy.reform/deploymentNo: qc-approval-001-dev-approval_DP1
+    application.deploy.reform/environment: dev-approval
+    application.deploy.reform/name: qc-approval-001
+    application.deploy.reform/repository: https://github.com/kreslv/reform-deployment.git
+    application.deploy.reform/repositoryPath: "0010"
+    application.deploy.reform/revision: 2023.04.1
+    application.deploy.reform/tags: ""
+    deploy.reform/domain: ""
+    deploy.reform/version: 6b5c82cf8fbd6720e41370072c0193f4158e3f6c
+  creationTimestamp: null
+  name: qc-approval-001
+  namespace: uat
+spec:
+  components:
+  - name: qc-approval-001-newweb-api
+    properties:
+      addRevisionLabel: false
+      cpu: "0.5"
+      exposeType: ClusterIP
+      image: docker-pull.infinity.reslv.one/nginx
+      imagePullPolicy: IfNotPresent
+      memory: 10Mi
+      ports:
+      - expose: true
+        port: 80
+        protocol: TCP
+    type: webservice
+  policies:
+  - name: topology-clusters
+    properties:
+      clusters:
+      - local
+    type: topology
+  workflow:
+    steps:
+    - name: deploy
+      properties:
+        ignoreTerraformComponent: false
+        policies:
+        - topology-clusters
+      type: deploy
+status: {}
