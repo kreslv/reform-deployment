@@ -21,18 +21,4 @@ spec:
         port: 80
         protocol: TCP
     type: webservice
-  policies:
-  - name: topology-clusters
-    properties:
-      clusters:
-      - local
-    type: topology
-  workflow:
-    steps:
-    - name: deploy
-      properties:
-        ignoreTerraformComponent: false
-        policies:
-        - topology-clusters
-      type: deploy
 status: {}
