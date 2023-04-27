@@ -1,13 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 commonAnnotations:
   application.deploy.reform/cluster: local
-  application.deploy.reform/commitHash: ba65e493b518de8055511d7046758173c79fa457
-  application.deploy.reform/deploymentNo: demo-2-dev-approval_DP1
+  application.deploy.reform/commitHash: 7a19f9a650163a5ca52a3ab69d0631ae7ae063f7
+  application.deploy.reform/deploymentNo: demo-2-dev-approval_DP2
   application.deploy.reform/environment: dev-approval
   application.deploy.reform/name: demo-2
   application.deploy.reform/repository: https://github.com/kreslv/reform-deployment.git
   application.deploy.reform/repositoryPath: demo-2
-  application.deploy.reform/revision: 2023.04.1
+  application.deploy.reform/revision: 2023.04.2
   deploy.reform/domain: ""
   deploy.reform/version: ccc38202e745330f431bb2ca42601632c9e3fb12
 kind: Kustomization
