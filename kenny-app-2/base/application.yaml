@@ -2,7 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   annotations:
-    application.deploy.reform/tags: ""
+    application.deploy.reform/tags: _
   creationTimestamp: null
   name: kenny-app-2
   namespace: vela-system
