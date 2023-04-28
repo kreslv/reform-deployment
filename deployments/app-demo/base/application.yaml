@@ -11,11 +11,11 @@ spec:
   - name: app-demo-app-demo-3-web
     properties:
       addRevisionLabel: false
-      cpu: "0.5"
+      cpu: "0.3"
       exposeType: ClusterIP
       image: nginx
       imagePullPolicy: IfNotPresent
-      memory: 7Mi
+      memory: 6Mi
       ports:
       - expose: true
         port: 80
